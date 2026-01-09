@@ -1,0 +1,1 @@
+// here I declare all constats that I use in the project
