@@ -5,10 +5,10 @@
   "license": "ISC",
   "author": "Kenan aljaber",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node --watch index.js"
+    "start": "node --watch server.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
