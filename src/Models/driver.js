@@ -9,6 +9,7 @@ const deliveryDriverSchema = new mongoose.Schema(
     currentLatitude: { type: Number },
     currentLongitude: { type: Number },
     lastLocationUpdateAt: { type: Date },
+    userId: { type: String, required: true },
   },
   { timestamps: { createdAt: "createdAt", updatedAt: false } }
 );

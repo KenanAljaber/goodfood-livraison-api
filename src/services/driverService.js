@@ -1,4 +1,4 @@
-import DeliveryDriver from "../Models/deliveryDriver.js";
+import DeliveryDriver from "../models/driver.js";
 const create = async (driver) => {
     try {
         return await DeliveryDriver.create(driver);
