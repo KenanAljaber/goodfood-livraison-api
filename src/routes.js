@@ -4,6 +4,6 @@ import deliveryTracing from "./controllers/tracking/trackingController.js";
 export default (router) => {
     
     router.use("/", delivery);
-    router.use("/", deliveryDriiver);
+    router.use("/delivery-driver", deliveryDriiver);
     router.use("/", deliveryTracing);
 }
