@@ -9,7 +9,7 @@ const router = express.Router();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-connectMongo(process.env.MONGO_URL);
+connectMongo(process.env.MONGO_URI);
 
 
 const port = process.env.PORT || 3000;

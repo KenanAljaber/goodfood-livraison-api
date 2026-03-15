@@ -1,16 +1,31 @@
-version: "3.9"
-
 services:
+  app:
+    build: .
+    container_name: api-livraison
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
   mongodb:
     image: mongo:7
     container_name: mongodb-livraison
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
+    env_file:
+      - .env
     volumes:
       - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD","mongosh","--eval","db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
 
 volumes:
   mongo_data:
