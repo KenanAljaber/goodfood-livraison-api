@@ -1,18 +1,13 @@
 import DeliveryDriver from "../models/driver.js";
 const create = async (driver) => {
-    try {
-        const result = await DeliveryDriver.create(driver);
-        return result
-    } catch (error) {
-        return res.status(500).json({ error: error.message });
-    }
-}
+  return await DeliveryDriver.create(driver);
+};
 
 const getById = async (id) => {
     try {
         return await DeliveryDriver.findById(id);
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+       throw error
     }
 }
 
