@@ -10,6 +10,11 @@
     "test": "jest",
     "start": "node --watch server.js"
   },
+  "jest": {
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  }
+},
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
