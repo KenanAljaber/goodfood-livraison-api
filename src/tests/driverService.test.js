@@ -1,7 +1,7 @@
-import driverService from "../services/driverService.js";
-import DeliveryDriver from "../models/driver.js";
+import driverService from "../services/driverService";
+import DeliveryDriver from "../models/driver";
 
-jest.mock("../models/driver.js");
+jest.mock("../models/driver");
 
 
 describe("driverService.create", () => {

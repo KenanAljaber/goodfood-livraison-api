@@ -10,10 +10,12 @@
     "test": "jest",
     "start": "node --watch server.js"
   },
-  "jest": {
+"jest": {
   "transform": {
     "^.+\\.js$": "babel-jest"
-  }
+  },
+  "roots": ["<rootDir>/src"],
+  "modulePaths": ["<rootDir>/src"]
 },
   "dependencies": {
     "dotenv": "^17.2.3",
