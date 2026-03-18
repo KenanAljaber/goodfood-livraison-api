@@ -54,11 +54,11 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/goodfood-livraison-api:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      # - name: deploy      // when we have the server we can use this to automate the deployment
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.KEY }}
-      #     script: |
-      #       docker pull ${{ secrets.DOCKERHUB_USERNAME }}/goodfood-livraison-api:${{ github.sha }}
+      - name: deploy      #// when we have the server we can use this to automate the deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/goodfood-livraison-api:${{ github.sha }}
