@@ -25,7 +25,7 @@ describe("driverService.create", () => {
     expect(DeliveryDriver.create).toHaveBeenCalledWith(fakeDriver);
 
     // Check the result contains what we expect
-    expect(result._id).toBe("abc123");
+    expect(result._id).toBe("abc1232");
     expect(result.vehicleType).toBe("car");
   });
 
